@@ -1,38 +1,177 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+    --transition: all 0.5s ease-out;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow:  0 5px 15px rgba(0, 0, 0, 0.333);
+  --max-width: 1170px;
+  --fixed-width: 620px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+ ul li {
+   list-style: none;
+ }
+body {
+  margin: 0;
+  box-sizing: border-box;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0;
+  background: rgb(227, 227, 227);
+  font-family: 'Sansita Swashed', cursive,'Work Sans', sans-serif; 
+}
+.nav {
+    background-color: rgb(15, 0, 27);
+    margin: 0;
+    position: sticky;
+    top:0;
+    padding: 1rem;
+    color: white;
+    box-shadow: var(--dark-shadow);
+    display: flex;
+    justify-content: space-around;
+    z-index: 9;
+}
+.search-icon {
+  display: inline;
+  padding-right: .5rem;
+  width: 10px;
+}
+.display-result {
+  visibility: hidden;
+  position: absolute;
+  max-height: 90vh;
+  z-index:999;
+  overflow: overlay;
+}
+.show-display-result {
+  visibility: visible;
+  width: 11rem;
+  padding:initial;
+  border: 1px solid rgb(15, 0, 27);
+  border-radius: .3rem;
+  background: white;
+  color: rgba(17, 17, 17, 0.802);
+}
+.display-li {
+  padding: .5rem;
+  cursor: pointer;
+}
+.display-li:hover {
+  background: rgba(19, 18, 18, 0.185);
 }
 
-.App-link {
-  color: #61dafb;
+.search {
+    padding: .58rem;
+    border-radius: .3rem;
+    border: none;
+    position: relative;
+    top: 1rem;
+    background: rgb(222, 215, 220);
 }
+.quotes-container {
+    height: 100vh;
+    display: grid;
+    justify-items: center;
+    place-content: center;
+    line-break: auto;
+    word-spacing: 3px;
+     text-align: center;
+}
+.quote-text {
+    font-weight: 900;
+    font-size: xx-large;
+    color: rgb(40, 12, 67);
+}
+.continer {
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    gap:2rem;
+    box-decoration-break: clone;
+  flex-wrap: wrap;
+  margin-top: 2rem; 
+  padding: 0 5rem;
+}
+.card-container {
+    min-width:100%;
+    margin:1rem 0;
+    flex-grow: 0;
+    flex-shrink: 1;
+    letter-spacing: 0.028em;
+    line-height: 26px;
+    overflow: hidden;
+    transition: var(--transition);
+  }
+  .card-container:hover figure {
+    box-shadow: 0px 2px 5px rgba(174, 152, 193, 0.555);
+  }
+  .img-container {
+      margin:0;
+      padding: 0;
+      overflow: hidden;
+  }
+  img {
+      width: 100%;
+      margin: 0;
+      display: block;
+  }
+  .card-img {
+    height: 50%;
+    object-fit: contain;
+    cursor: pointer;
+  }
+  .figure {
+      height: 100%;
+    border: 0 solid transparent;
+    border-radius:1rem;
+    background-color: rgba(231, 212, 248, 0.555);
+    overflow: hidden;
+    transition: var(--transition);
+  }
+  figure:hover img {
+      transform: scale(1.1);
+  }
+  figcaption {
+    padding: 2.5rem;
+  }
+  figcaption > h4:first-child {
+    cursor: pointer;
+  }
+  .price{
+    position: static;
+    float: none;
+    color:var(--clr-red-light);
+  }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  /* footer */ 
+  .footer {
+      position: relative;
+      bottom: 0;
+      padding: 2rem;
+     background-color: rgb(15, 0, 27);
+     color:white;
   }
-  to {
-    transform: rotate(360deg);
+  .footer > div {
+      display: grid;
+      justify-content: center;
+      font-size: 2em;
   }
-}
+  @media screen and (min-width:765px) {
+    .continer {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+       .card-container {
+          min-height: 15rem;
+      }
+  }
+  @media screen and (min-width:1444px) {
+    .continer {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+    }
+      .card-container {
+          min-height: 15rem;
+      }     
+  }
