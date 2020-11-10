@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 import Footer from './Footer';
 import MoviesCharacter from './MoviesCharacter';
@@ -16,6 +16,8 @@ function App() {
   const [RandomQuote , setQuotes ] = useState();
   const [searchedName , setSearchedName] = useState();
   const [displayBox , setdisplayBox] = useState(null);
+
+  const containerElement = useRef();
 
   useEffect(() => {
     function fetcher(apiURL, setter) {
@@ -83,15 +85,19 @@ let names = [];
      e.preventDefault();
       displayBox &&  displayBox.classList.remove('show-display-result');
       const selectedName = e.target.textContent;
-
-      window.scrollTo({
-          top:3000,
-          behavior: 'smooth'
-      })
-      console.log(e)
+      
+      
+      
       for( let i = 0; i < movies.length; i++) {
           if((movies[i].name).includes(selectedName) ) {
-              return console.log(movies[i]);
+              const selectedElementPosition = 
+              containerElement.current.children[i].offsetTop;
+            console.log(selectedElementPosition)
+            
+              return window.scrollTo({
+          top:selectedElementPosition,
+          behavior: 'smooth'
+      })
           }
       }
       
@@ -116,7 +122,8 @@ let names = [];
               <Quotes key={RandomQuote} {...RandomQuote}/>}
       </div>
 
-        <div className="continer">
+        <div className="continer"
+             ref={containerElement}>
            {(movies.length > 0) && movies.map((item)=> 
          <MoviesCharacter  key={item.char_id} {...item}/>
             )}

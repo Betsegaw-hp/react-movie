@@ -9,7 +9,7 @@ function MoviesCharacter(props) {
   } = props;
 
   return(
-   <div className="card-container">
+   <div className="card-container" id={name}>
           <figure className="figure">
           <div className="img-container">
           <img loading="lazy" src={img} className="card-img" alt={name}/>
