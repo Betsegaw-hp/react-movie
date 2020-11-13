@@ -1,5 +1,5 @@
 import React from 'react';
- 
+import './magnifiying-glass.png';
 function Nav(props) {
 
   const {
@@ -30,7 +30,7 @@ function Nav(props) {
                        className="display-li"
                        onClick={handleDisplayBoxClick}>
                            <img className="search-icon"
-                           src="./public/magnifiying-glass.png" 
+                           src="src/magnifiying-glass.png" 
                            alt=""/>
                           {item}
                           </li>    
