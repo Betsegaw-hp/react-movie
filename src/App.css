@@ -17,11 +17,14 @@ body {
   box-sizing: border-box;
   min-height: 100vh;
   padding: 0;
-  background: rgb(227, 227, 227);
+  background: #FAF8F8;
   font-family: 'Sansita Swashed', cursive,'Work Sans', sans-serif; 
 }
+/* 
+  Nav section
+*/
 .nav {
-    background-color: rgb(15, 0, 27);
+  background: linear-gradient(267.09deg, #000000 47.58%, rgba(255, 255, 255, 0) 100%), #302C2C;
     margin: 0;
     position: sticky;
     top:0;
@@ -69,6 +72,9 @@ body {
     top: 1rem;
     background: rgb(222, 215, 220);
 }
+/* 
+ Quotes section
+*/
 .quotes-container {
     height: 100vh;
     display: grid;
@@ -76,13 +82,19 @@ body {
     place-content: center;
     line-break: auto;
     word-spacing: 3px;
-     text-align: center;
+    text-align: center;
+    background: linear-gradient(240.37deg, #000000 7.11%, rgba(255, 255, 255, 0) 99.31%), linear-gradient(180deg, #211C1C 0%, rgba(255, 255, 255, 0) 100%), #413737;
+    color: #a19b9b;
 }
 .quote-text {
     font-weight: 900;
     font-size: xx-large;
-    color: rgb(40, 12, 67);
+    letter-spacing: 0.18em;
+    color: #FEF6F6;
 }
+/* 
+movie Character section
+*/
 .continer {
     display: flex;
     flex-direction: column;
@@ -91,15 +103,13 @@ body {
     box-decoration-break: clone;
   flex-wrap: wrap;
   margin-top: 2rem; 
-  padding: 0 5rem;
+  padding: 0 3rem;
 }
 .card-container {
     min-width:100%;
     margin:1rem 0;
     flex-grow: 0;
     flex-shrink: 1;
-    letter-spacing: 0.028em;
-    line-height: 26px;
     overflow: hidden;
     transition: var(--transition);
   }
@@ -110,6 +120,7 @@ body {
       margin:0;
       padding: 0;
       overflow: hidden;
+      border-radius: 10px;
   }
   img {
       width: 100%;
@@ -124,8 +135,8 @@ body {
   .figure {
       height: 100%;
     border: 0 solid transparent;
-    border-radius:1rem;
-    background-color: rgba(231, 212, 248, 0.555);
+    border-radius: 10px;
+    background: linear-gradient(200.19deg, #2B2727 0%, rgba(255, 255, 255, 0) 100%), #463C3C;
     overflow: hidden;
     transition: var(--transition);
   }
@@ -133,15 +144,18 @@ body {
       transform: scale(1.1);
   }
   figcaption {
-    padding: 2.5rem;
+    padding: 2rem;
+    font-size: 18px;
+    line-height: 176.5%;
+    /* or 32px */
+    color:#FEF6F6;
+    letter-spacing: 0.18em;
   }
   figcaption > h4:first-child {
     cursor: pointer;
   }
-  .price{
-    position: static;
-    float: none;
-    color:var(--clr-red-light);
+  .item-text {
+    font-weight: 200;
   }
 
   /* footer */ 
@@ -149,7 +163,7 @@ body {
       position: relative;
       bottom: 0;
       padding: 2rem;
-     background-color: rgb(15, 0, 27);
+      background: linear-gradient(267.09deg, #000000 47.58%, rgba(255, 255, 255, 0) 100%), #302C2C;
      color:white;
   }
   .footer > div {

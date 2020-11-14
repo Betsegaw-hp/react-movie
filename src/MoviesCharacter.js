@@ -15,13 +15,17 @@ function MoviesCharacter(props) {
           <img loading="lazy" src={img} className="card-img" alt={name}/>
           </div>
               <figcaption> 
-              <h4 role="link">Name: {name}</h4>
-              <h4 className="price">BirthDay: {birthday}</h4>
+              <h4 role="link" className="item-text">
+                Name: <strong>{name}</strong>
+                </h4>
+              <h4 className="item-text">
+                BirthDay: <strong>{birthday}</strong>
+                </h4>
               <p className="item-text">
-              Nickname: {nickname}
+              Nickname: <strong>{nickname}</strong>
             </p>
               <p className="item-text">
-              Status: {status}
+              Status: <strong>{status}</strong>
             </p>
               </figcaption>
           </figure>

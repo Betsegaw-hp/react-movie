@@ -84,15 +84,13 @@ let names = [];
   function handleDisplayBoxClick(e) {
      e.preventDefault();
       displayBox &&  displayBox.classList.remove('show-display-result');
-      const selectedName = e.target.textContent;
-      
-      
+      const selectedName = e.target.textContent;   
       
       for( let i = 0; i < movies.length; i++) {
           if((movies[i].name).includes(selectedName) ) {
               const selectedElementPosition = 
               containerElement.current.children[i].offsetTop;
-            console.log(selectedElementPosition)
+            
             
               return window.scrollTo({
           top:selectedElementPosition,
