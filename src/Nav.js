@@ -1,15 +1,29 @@
-import React from 'react';
-import './magnifiying-glass.png';
-function Nav(props) {
+import React, { useEffect, useRef } from 'react';
 
+const magnifiyingGlassImg  = require('./magnifiying-glass.png');
+
+
+function Nav(props) {
+  
   const {
       handleTextChange,
+      handleDisplayBoxClick,
       displayBoxhandle,
       searchedName,
-      handleDisplayBoxClick,
-      keyPress
+      keyPress,
+      displayBox
   } = props;
+  const inputElement = useRef();
 
+  useEffect(()=> {
+    
+      inputElement.current.onblur = (e) => {
+
+      displayBox.classList.remove('show-display-result')  
+    }
+
+  })
+  
   return(
   <nav className="nav">
       <div className="logo">
@@ -21,6 +35,7 @@ function Nav(props) {
                  className="search"
                  onKeyPress={keyPress}
                  onChange={handleTextChange}
+                 ref={inputElement}
                   />
                   
           <ul className="display-result"
@@ -28,9 +43,10 @@ function Nav(props) {
                {searchedName && searchedName.map((item, i)=> (
                    <li key={item +"_"+ i}
                        className="display-li"
-                       onClick={handleDisplayBoxClick}>
+    // onMouseDown used insted of onClick b/c https://github.com/facebook/react/issues/4210
+                       onMouseDown={handleDisplayBoxClick}>
                            <img className="search-icon"
-                           src="src/magnifiying-glass.png" 
+                           src={magnifiyingGlassImg} 
                            alt=""/>
                           {item}
                           </li>    

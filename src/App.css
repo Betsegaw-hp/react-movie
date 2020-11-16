@@ -136,7 +136,7 @@ movie Character section
       height: 100%;
     border: 0 solid transparent;
     border-radius: 10px;
-    background: linear-gradient(200.19deg, #2B2727 0%, rgba(255, 255, 255, 0) 100%), #463C3C;
+    background: linear-gradient(200.19deg, #2B2727 0%, rgba(255, 255, 255, 0) 100%), #463c3cb9;
     overflow: hidden;
     transition: var(--transition);
   }

@@ -17,6 +17,7 @@ function App() {
   const [searchedName , setSearchedName] = useState();
   const [displayBox , setdisplayBox] = useState(null);
 
+  
   const containerElement = useRef();
 
   useEffect(() => {
@@ -75,12 +76,6 @@ let names = [];
       console.log(searchedName)
   }
 
-  function handleDisplayBox(el) {
-      if(el){
-       return  setdisplayBox(el);     
-      }
-  }
-
   function handleDisplayBoxClick(e) {
      e.preventDefault();
       displayBox &&  displayBox.classList.remove('show-display-result');
@@ -105,19 +100,23 @@ let names = [];
           e.target.value = '';
       }
   }
-
  
   return(
       <div>
           <Nav handleTextChange ={handleInputTextChange}
-               displayBoxhandle ={handleDisplayBox} 
-               searchedName={searchedName}
                handleDisplayBoxClick ={handleDisplayBoxClick}
-               keyPress={handleSearchkeypress}/>
+               displayBoxhandle ={e=> e && setdisplayBox(e)}
+               keyPress={handleSearchkeypress}
+               displayBox = {displayBox} 
+               searchedName={searchedName}
+               />
 
       <div className="quotes-container"> 
-          {   RandomQuote !== null &&
+              <div className="quote-item">
+              {   RandomQuote !== null &&
               <Quotes key={RandomQuote} {...RandomQuote}/>}
+              </div>
+              <div className="quote-item"></div>
       </div>
 
         <div className="continer"
