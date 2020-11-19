@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 import Footer from './Footer';
-import g_103 from './g_103.gif';
 import MoviesCharacter from './MoviesCharacter';
 import Nav from './Nav';
+import Preloader from './Preloader';
 import Quotes from './Quotes';
 
 // eslint-disable-next-line no-unused-vars
@@ -102,17 +102,6 @@ let names = [];
           e.target.value = '';
       }
   }
- 
-
-
-function Preloader() {
-  return(
-    <div className="preloader">
-      <img  src={g_103}
-            alt="preloader"/>
-    </div>
-  )
-}
  
   return(
       <div>
