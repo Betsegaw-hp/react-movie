@@ -1,3 +1,5 @@
+import React from 'react';
+
 
 function MoviesCharacter(props) {
   const {
@@ -8,8 +10,9 @@ function MoviesCharacter(props) {
      status,
   } = props;
 
-  return(
-   <div className="card-container" id={name}>
+ return  (
+    <>
+      <div className="card-container" id={name}>
           <figure className="figure">
           <div className="img-container">
           <img loading="lazy" src={img} className="card-img" alt={name}/>
@@ -30,6 +33,8 @@ function MoviesCharacter(props) {
               </figcaption>
           </figure>
       </div>
+    </>
+   
   )
 }
 

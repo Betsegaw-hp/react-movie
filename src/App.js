@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 import Footer from './Footer';
+import g_103 from './g_103.gif';
 import MoviesCharacter from './MoviesCharacter';
 import Nav from './Nav';
 import Quotes from './Quotes';
-
 
 // eslint-disable-next-line no-unused-vars
 const BASE_URL = 'https://www.breakingbadapi.com/api/';
@@ -16,6 +16,7 @@ function App() {
   const [RandomQuote , setQuotes ] = useState();
   const [searchedName , setSearchedName] = useState();
   const [displayBox , setdisplayBox] = useState(null);
+  const [fetched , setFetched] = useState(false);
 
   
   const containerElement = useRef();
@@ -29,6 +30,7 @@ function App() {
             return  setter(data[0]);
         }
         setter(data);
+        setFetched(true);
     }).catch(err => {
         if(err.status >= 400) {
             document.writeln('unable to connect to the server')
@@ -101,6 +103,17 @@ let names = [];
       }
   }
  
+
+
+function Preloader() {
+  return(
+    <div className="preloader">
+      <img  src={g_103}
+            alt="preloader"/>
+    </div>
+  )
+}
+ 
   return(
       <div>
           <Nav handleTextChange ={handleInputTextChange}
@@ -112,19 +125,24 @@ let names = [];
                />
 
       <div className="quotes-container"> 
-              {   RandomQuote !== null &&
-              <Quotes key={RandomQuote} {...RandomQuote}/>}
+              { fetched ?   RandomQuote !== null &&
+              <Quotes key={RandomQuote} {...RandomQuote}/>
+               : <Preloader/>}
       </div>
        <div className="main-intro-text">
            <h1>Who do you wish to meet?</h1>
            <h6> search or scroll to explore more actors</h6>
            </div>
-        <div className="continer"
-             ref={containerElement}> 
-           {(movies.length > 0) && movies.map((item)=> 
-         <MoviesCharacter  key={item.char_id} {...item}/>
-            )}
-        </div>
+            {fetched ?
+            <div className="continer"
+             ref={containerElement}>
+            {(movies.length > 0) && movies.map(item=> 
+         <MoviesCharacter  key={item.char_id}
+                           {...item} />)}
+            </div>
+             : <Preloader/> }
+           
+        
         <Footer />
       </div>
   )
