@@ -148,6 +148,7 @@ movie Character section
     box-shadow: 0px 5px 8px rgba(31, 23, 21, 0.555);
   }
   .img-container {
+      position: relative;
       margin:0;
       padding: 0;
       overflow: hidden;
@@ -177,7 +178,25 @@ movie Character section
   }
   figure:hover .img-container { 
       border-radius: 10px;
+      
   }
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background: linear-gradient(240.09deg, #0000007a 47.58%, rgba(177, 104, 104, 0.405) 100%), #302c2c18;
+  }
+  
+  .img-container:hover .overlay {
+    opacity: 1;
+  }
+  
   figcaption {
     padding: 2rem;
     font-size: 18px;

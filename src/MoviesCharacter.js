@@ -16,6 +16,7 @@ function MoviesCharacter(props) {
           <figure className="figure">
           <div className="img-container">
           <img loading="lazy" src={img} className="card-img" alt={name}/>
+          <div className="overlay"></div>
           </div>
               <figcaption> 
               <h4 role="link" className="item-text">
