@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-
-const magnifiyingGlassImg  = require('./magnifiying-glass.png');
+import magnifiyingGlass from './magnifiyingGlass.png';
 
 
 function Nav(props) {
@@ -53,7 +52,7 @@ function Nav(props) {
     // onMouseDown used insted of onClick b/c https://github.com/facebook/react/issues/4210
                        onMouseDown={handleDisplayBoxClick}>
                            <img className="search-icon"
-                           src={magnifiyingGlassImg} 
+                           src={magnifiyingGlass} 
                            alt=""/>
                           {item}
                           </li>    
