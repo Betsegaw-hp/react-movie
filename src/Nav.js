@@ -14,6 +14,7 @@ function Nav(props) {
       displayBox
   } = props;
   const inputElement = useRef();
+  const nav = useRef();
 
   useEffect(()=> {
     
@@ -21,11 +22,17 @@ function Nav(props) {
 
       displayBox.classList.remove('show-display-result')  
     }
+    window.onscroll = (e) => {
+        if(window.pageYOffset >= 100 )
+          nav.current.style.opacity = "0.7";
+          else
+         nav.current.style.opacity = "1"; 
+    }
 
   })
   
   return(
-  <nav className="nav">
+  <nav className="nav" ref={nav}>
       <div className="logo">
           <h1>Breaking Bad</h1>
       </div>

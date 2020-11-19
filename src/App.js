@@ -112,15 +112,15 @@ let names = [];
                />
 
       <div className="quotes-container"> 
-              <div className="quote-item">
               {   RandomQuote !== null &&
               <Quotes key={RandomQuote} {...RandomQuote}/>}
-              </div>
-              <div className="quote-item"></div>
       </div>
-
+       <div className="main-intro-text">
+           <h1>Who do you wish to meet?</h1>
+           <h6> search or scroll to explore more actors</h6>
+           </div>
         <div className="continer"
-             ref={containerElement}>
+             ref={containerElement}> 
            {(movies.length > 0) && movies.map((item)=> 
          <MoviesCharacter  key={item.char_id} {...item}/>
             )}
