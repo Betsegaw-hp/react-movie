@@ -1,6 +1,11 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+And
+
+# * Deployed
+
+## "https://betsegaw-hp.github.io/react-movie/"
 
 ## Available Scripts
 
