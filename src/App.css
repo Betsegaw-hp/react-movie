@@ -45,7 +45,7 @@ body {
   visibility: hidden;
   position: absolute;
   max-height: 90vh;
-  z-index:999;
+  z-index: -1;
   overflow: overlay;
 }
 .show-display-result {
@@ -56,6 +56,7 @@ body {
   border-radius: .3rem;
   background: white;
   color: rgba(17, 17, 17, 0.802);
+  z-index:999;
 }
 .display-li {
   padding: .5rem;
@@ -87,7 +88,7 @@ body {
     background:
     linear-gradient(240.37deg, #0000009d 20.11%, rgba(177, 104, 104, 0.589) 80.31%),
     
-    url('https://images8.alphacoders.com/480/480380.jpg') center/cover no-repeat;
+    url('./p_480380.jpg') center/cover no-repeat;
     color: #dddddd;
 }
 .quote-text {
@@ -153,6 +154,7 @@ movie Character section
       padding: 0;
       overflow: hidden;
       transition: var(--transition);
+      cursor: pointer;
   }
   img {
       width: 100%;
@@ -163,7 +165,6 @@ movie Character section
   .card-img {
     height: 50%;
     object-fit: contain;
-    cursor: pointer;
   }
   .figure {
       height: 100%;
@@ -204,9 +205,6 @@ movie Character section
     /* or 32px */
     letter-spacing: 0.18em;
     color: #f0ddddb8;
-  }
-  figcaption > h4:first-child {
-    cursor: pointer;
   }
   .item-text {
     font-weight: 200;
@@ -264,6 +262,7 @@ movie Character section
     }
        .card-container {
           min-height: 15rem;
+          transform: scale(0.8);
       }
   }
   @media screen and (min-width:1444px) {

@@ -88,11 +88,10 @@ let names = [];
               const selectedElementPosition = 
               containerElement.current.children[i].offsetTop;
             
-            
-              return window.scrollTo({
-          top:selectedElementPosition,
-          behavior: 'smooth'
-      })
+             return window.scrollTo({
+                        top:selectedElementPosition,
+                        behavior: 'smooth'
+                     })
           }
       }
       
