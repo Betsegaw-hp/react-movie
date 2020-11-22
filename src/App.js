@@ -98,7 +98,8 @@ let names = [];
 
   function itemFinder(itemName) {
     for( let i = 0; i < movies.length; i++) {
-          if((movies[i].name) === itemName) {
+        // To efficient search expriance /.toLowerCase()/
+          if((movies[i].name).toLowerCase() === itemName.toLowerCase()) {
               const selectedElementPosition = 
               containerElement.current.children[i].offsetTop;
             
