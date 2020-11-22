@@ -36,6 +36,9 @@ body {
     z-index: 9;
     transition: var(--transition);
 }
+.logo > a >img {
+  height: 60px;
+}
 .search-icon {
   display: inline;
   padding-right: .5rem;
@@ -45,7 +48,7 @@ body {
   visibility: hidden;
   position: absolute;
   max-height: 90vh;
-  z-index: -1;
+  z-index: -100;
   overflow: overlay;
 }
 .show-display-result {
@@ -87,8 +90,7 @@ body {
     text-align: center;
     background:
     linear-gradient(240.37deg, #0000009d 20.11%, rgba(177, 104, 104, 0.589) 80.31%),
-    
-    url('./p_480380.jpg') center/cover no-repeat;
+    url('./media/p_480380.jpg') center/cover no-repeat;
     color: #dddddd;
 }
 .quote-text {
@@ -190,7 +192,7 @@ movie Character section
     height: 100%;
     width: 100%;
     opacity: 0;
-    transition: .5s ease;
+    transition: var(--transition);
     background: linear-gradient(240.09deg, #0000007a 47.58%, rgba(177, 104, 104, 0.405) 100%), #302c2c18;
   }
   
@@ -218,13 +220,28 @@ movie Character section
       background: linear-gradient(267.09deg, #000000 47.58%, rgba(255, 255, 255, 0) 100%), #302C2C;
      color:white;
   }
-  .footer > div {
-      display: grid;
-      justify-content: center;
-      font-size: 2em;
+  .footer .footer-flex-item {
+    display: flex;
+  }
+  .social-link {
+    width:3rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .social-link:hover {
+    transform: scale(1.2);
+  }
+  .Source-referance {
+    display: inline-flex;
+    gap:1rem;
+    margin:0.5rem 1rem;
+    justify-content: flex-end;
+  }
+  .Source-referance a {
+    color: #dddddd;
+    
   }
   .top-link {
-    font-size: 1.25rem;
     position: fixed;
     bottom: 3rem;
     right: 3rem;
@@ -238,6 +255,8 @@ movie Character section
     animation: bounce 2s ease-in-out infinite;
     visibility: hidden;
     z-index: -100;
+    cursor: pointer;
+    transition: var(--transition);
   }
   .show-link {
     visibility: visible;
@@ -249,10 +268,10 @@ movie Character section
       transform: scale(1);
     }
     50% {
-      transform: scale(1.5);
+      transform: scale(1.2);
     }
     100% {
-      transform: scale(1);
+      transform: scale(1.1);
     }
   }
   @media screen and (min-width:765px) {

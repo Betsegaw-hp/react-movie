@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-import magnifiyingGlass from './magnifiyingGlass.png';
-
+import React, { useLayoutEffect, useRef } from 'react';
+import logo from './media/icons8-breaking-bad.svg';
+import magnifiyingGlass from './media/magnifiyingGlass.png';
 
 function Nav(props) {
   
@@ -15,7 +15,7 @@ function Nav(props) {
   const inputElement = useRef();
   const nav = useRef();
 
-  useEffect(()=> {
+  useLayoutEffect(()=> {
     
       inputElement.current.onblur = (e) => {
 
@@ -33,7 +33,7 @@ function Nav(props) {
   return(
   <nav className="nav" ref={nav}>
       <div className="logo">
-          <h1>Breaking Bad</h1>
+         <a href="#"><img src={logo}  alt="logo"/></a>
       </div>
       <div className="Items">
           <input type="search" 
@@ -53,7 +53,7 @@ function Nav(props) {
                        onMouseDown={handleDisplayBoxClick}>
                            <img className="search-icon"
                            src={magnifiyingGlass} 
-                           alt=""/>
+                           alt="search-icon"/>
                           {item}
                           </li>    
                ))} 

@@ -1,5 +1,5 @@
 import React from "react";
-import g_103 from "./g_103.gif";
+import g_103 from "./media/g_103.gif";
 
 
 function Preloader() {
