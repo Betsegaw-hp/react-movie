@@ -26,7 +26,7 @@ function App() {
     function fetcher(apiURL, setter) {
         fetch(apiURL).then(res => res.json())
     .then(data => {
-        console.log(data);
+        
         if(apiURL === quotesAPI ) {
             return  setter(data[0]);
         }
@@ -76,7 +76,6 @@ let names = [];
      return setSearchedName([]);
   }
       setSearchedName(cloneNames); 
-      console.log(searchedName)
   }
 
   function handleDisplayBoxClick(e) {
@@ -85,8 +84,21 @@ let names = [];
       const selectedName = e.target.textContent;
     //   diplay the full name when clicked
        searchElement.value = selectedName ;
-      for( let i = 0; i < movies.length; i++) {
-          if((movies[i].name).includes(selectedName) ) {
+
+    return  itemFinder(selectedName)
+  }
+
+  function handleSearchkeypress(e) {
+      if(e.charCode === 13) {
+          itemFinder(e.target.value);
+          e.target.value = '';
+      }
+      setSearchElement(e.target);
+  }
+
+  function itemFinder(itemName) {
+    for( let i = 0; i < movies.length; i++) {
+          if((movies[i].name) === itemName) {
               const selectedElementPosition = 
               containerElement.current.children[i].offsetTop;
             
@@ -96,16 +108,9 @@ let names = [];
                      })
           }
       }
-      
   }
-  function handleSearchkeypress(e) {
-      if(e.charCode === 13) {
-          e.target.value = '';
-      }
-      setSearchElement(e.target);
-  }
- 
-  return(
+  
+  return (
       <div>
           <Nav handleTextChange ={handleInputTextChange}
                handleDisplayBoxClick ={handleDisplayBoxClick}
@@ -116,7 +121,7 @@ let names = [];
                />
 
       <div className="quotes-container"> 
-              { fetched ?   RandomQuote !== null &&
+             {fetched ?   RandomQuote !== null &&
               <Quotes key={RandomQuote} {...RandomQuote}/>
                : <Preloader/>}
       </div>

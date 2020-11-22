@@ -15,7 +15,7 @@ function Footer() {
       else 
        topLink.current.classList.remove('show-link')
     })
-  })
+  },[])
   
   return (
     <footer className="footer">

@@ -14,6 +14,7 @@ function Nav(props) {
   } = props;
   const inputElement = useRef();
   const nav = useRef();
+  const home = '#';
 
   useLayoutEffect(()=> {
     
@@ -33,7 +34,7 @@ function Nav(props) {
   return(
   <nav className="nav" ref={nav}>
       <div className="logo">
-         <a href="#"><img src={logo}  alt="logo"/></a>
+         <a href={home}><img src={logo}  alt="logo"/></a>
       </div>
       <div className="Items">
           <input type="search" 

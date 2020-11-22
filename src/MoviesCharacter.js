@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 function MoviesCharacter(props) {
   const {
      img ,
@@ -8,6 +7,7 @@ function MoviesCharacter(props) {
      birthday,
      nickname,
      status,
+     portrayed
   } = props;
 
  return  (
@@ -30,6 +30,9 @@ function MoviesCharacter(props) {
             </p>
               <p className="item-text">
               Status: <strong>{status}</strong>
+            </p>
+              <p className="item-text">
+              Portrayed: <strong>{portrayed}</strong>
             </p>
               </figcaption>
           </figure>
