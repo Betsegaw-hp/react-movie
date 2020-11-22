@@ -47,7 +47,3 @@ function Footer() {
 }
 
 export default Footer;
-
-
-// pagination ( ideal)
-// adding episodes ( ideal)
