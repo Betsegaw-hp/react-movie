@@ -4,7 +4,7 @@ import githubIcon from './media/icons8-github.svg';
 
 const BASE_URL = 'https://www.breakingbadapi.com/api/';
 const charactersAPI = 'https://breakingbadapi.com/api/characters';
-const quotesAPI = 'https://breakingbadapi.com/api/quote/random';
+const quotesAPI = 'https://breakingbadapi.com/api/quotes';
 function Footer() {
   const topLink = useRef();
 

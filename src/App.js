@@ -17,6 +17,7 @@ function App() {
   const [searchedName , setSearchedName] = useState();
   const [displayBox , setdisplayBox] = useState(null);
   const [fetched , setFetched] = useState(false);
+  const [searchElement , setSearchElement]  = useState(null);
 
   
   const containerElement = useRef();
@@ -81,8 +82,9 @@ let names = [];
   function handleDisplayBoxClick(e) {
      e.preventDefault();
       displayBox &&  displayBox.classList.remove('show-display-result');
-      const selectedName = e.target.textContent;   
-      
+      const selectedName = e.target.textContent;
+    //   diplay the full name when clicked
+       searchElement.value = selectedName ;
       for( let i = 0; i < movies.length; i++) {
           if((movies[i].name).includes(selectedName) ) {
               const selectedElementPosition = 
@@ -100,6 +102,7 @@ let names = [];
       if(e.charCode === 13) {
           e.target.value = '';
       }
+      setSearchElement(e.target);
   }
  
   return(
