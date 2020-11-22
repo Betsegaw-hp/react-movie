@@ -222,6 +222,8 @@ movie Character section
   }
   .footer .footer-flex-item {
     display: flex;
+    justify-content: space-between;
+    line-break: anywhere;
   }
   .social-link {
     width:3rem;
@@ -243,7 +245,7 @@ movie Character section
   }
   .top-link {
     position: fixed;
-    bottom: 3rem;
+    bottom: 6rem;
     right: 3rem;
     background: var(--clr-secondary);
     width: 2rem;
