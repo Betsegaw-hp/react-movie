@@ -24,7 +24,7 @@ function Nav(props) {
     }
     window.onscroll = (e) => {
         if(window.pageYOffset >= 100 )
-          nav.current.style.opacity = "0.7";
+          nav.current.style.opacity = "0.8";
           else
          nav.current.style.opacity = "1"; 
     }
