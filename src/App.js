@@ -34,9 +34,9 @@ function App() {
         setFetched(true);
     }).catch(err => {
         if(err.status >= 400) {
-            document.writeln('unable to connect to the server')
+            document.writeln('unable to connect to the server.\n Please, reload the Page.')
         }
-        return console.log(err)
+        return console.error(err)
     });
     }
     fetcher(charactersAPI, setMovies);
