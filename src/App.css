@@ -81,7 +81,7 @@ body {
  Quotes section
 */
 .quotes-container {
-    height: 100vh;
+    height: 70vh;
     display: grid;
     justify-items: center;
     place-content: center;
@@ -90,7 +90,7 @@ body {
     text-align: center;
     background:
     linear-gradient(240.37deg, #0000009d 20.11%, rgba(177, 104, 104, 0.589) 80.31%),
-    url('./media/p_480380.jpg') center/cover no-repeat;
+    url('./media/p_480380.jpg') center/cover no-repeat fixed;
     color: #dddddd;
 }
 .quote-text {

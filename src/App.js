@@ -9,6 +9,7 @@ import Quotes from './Quotes';
 // eslint-disable-next-line no-unused-vars
 const BASE_URL = 'https://www.breakingbadapi.com/api/';
 const charactersAPI = 'https://breakingbadapi.com/api/characters';
+// const charactersAPI = 'https://breakingbadapi.com/api/characters?limit=10&offset=10';
 const quotesAPI = 'https://breakingbadapi.com/api/quote/random';
 
 function App() {
@@ -100,11 +101,12 @@ let names = [];
     for( let i = 0; i < movies.length; i++) {
         // To efficient search expriance /.toLowerCase()/
           if((movies[i].name).toLowerCase() === itemName.toLowerCase()) {
-              const selectedElementPosition = 
-              containerElement.current.children[i].offsetTop;
-            
+              const selectedElement = 
+              containerElement.current.children[i];
+            selectedElement.style.background = '#b6242f80';
+            setTimeout(() => { selectedElement.style.background = 'none' }, 500)
              return window.scrollTo({
-                        top:selectedElementPosition,
+                        top:selectedElement.offsetTop,
                         behavior: 'smooth'
                      })
           }
